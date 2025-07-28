@@ -35,7 +35,7 @@ C {iopin.sym} 650 -1400 0 0 {name=p8 lab=BP}
 C {iopin.sym} 740 -1270 0 0 {name=p9 lab=Apmos}
 C {iopin.sym} 740 -1390 0 0 {name=p10 lab=Bpmos}
 C {symbols/nfet_06v0.sym} 550 -1330 2 1 {name=M3
-L=0.70u
+L=0.60u
 W=mn_w
 nf=6
 m=1
@@ -49,7 +49,7 @@ model=nfet_06v0
 spiceprefix=X
 }
 C {symbols/pfet_06v0.sym} 760 -1330 0 1 {name=M4
-L=0.55u
+L=0.5u
 W=mp_w
 nf=6
 m=1
