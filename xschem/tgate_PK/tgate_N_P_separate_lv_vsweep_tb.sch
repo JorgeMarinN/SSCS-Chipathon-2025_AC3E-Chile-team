@@ -4,8 +4,56 @@ K {}
 V {}
 S {}
 E {}
-T {used to run ngspice sweep in parallel} 1220 -680 0 0 0.3 0.3 {layer=11}
-T {set num_threads to 1 for small circuits} 1490 -440 0 0 0.3 0.3 {layer=11}
+B 2 1190 -1100 1990 -700 {flags=graph
+y1=3.4e-07
+y2=0.017
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=3.3
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="gon_n
+gon_p
+gon"
+color="4 5 6"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+rawfile=$netlist_dir/tb_tgate_N_P_separate.raw
+autoload=1
+linewidth_mult=5}
+B 2 2050 -1100 2850 -700 {flags=graph
+y1=61
+y2=94
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=3.3
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+rawfile=$netlist_dir/tb_tgate_N_P_separate.raw
+autoload=1
+linewidth_mult=5
+color=4
+node=ron}
+T {used to run ngspice sweep in parallel} 1460 -660 0 0 0.3 0.3 {layer=11}
+T {set num_threads to 1 for small circuits} 1610 -380 0 0 0.3 0.3 {layer=11}
 N 30 -350 30 -330 {
 lab=GND}
 N 120 -350 120 -330 {
@@ -64,7 +112,7 @@ N 750 -620 770 -620 {lab=V_out1n}
 N 770 -620 770 -580 {lab=V_out1n}
 N 770 -650 770 -620 {lab=V_out1n}
 C {devices/title.sym} 245 -55 0 0 {name=l5 author="Jorge Marin (based on testbench by K. Herman/IHP)"}
-C {simulator_commands_shown.sym} 1215 -595 0 0 {name=SWEEP_SIM
+C {simulator_commands_shown.sym} 1345 -605 0 0 {name=SWEEP_SIM
 simulator=ngspice
 only_toplevel=false 
 value="
@@ -76,13 +124,13 @@ value="
 
 .param temp=27
 *.param Iload=500u
-.param Iload=1u
+.param Iload=10u
 .control
 save all 
 
 set num_threads 1
 *dc I0 -5m 5m 1.1u
-dc Vin 0 3.3 0.05
+dc Vin 0 3.3 0.01
 
 let Ron_N=(V(V_in)-V(V_out1n))/I(Vpn)
 let Ron_P=(V(V_in)-V(V_out1p))/I(Vpp)
@@ -92,9 +140,10 @@ let Gon = Gon_N + Gon_P
 let Ron = 1/Gon
 * meas dc Ronmax max Ron 
 * print Ronmax
-plot Ron title 'RON resistance'  ylabel 'Ron'
-plot Gon_N Gon_P Gon title 'GON conductance'  ylabel 'Gon'
-wrdata /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/tgate/out_Ron.txt Ron
+* plot Ron title 'RON resistance'  ylabel 'Ron'
+* plot Gon_N Gon_P Gon title 'GON conductance'  ylabel 'Gon'
+* wrdata /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/tgate/out_Ron.txt Ron
+write tb_tgate_N_P_separate.raw
 .endc
 "
 }
