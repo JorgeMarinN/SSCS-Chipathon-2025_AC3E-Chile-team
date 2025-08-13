@@ -1,0 +1,23 @@
+v {xschem version=3.4.7 file_version=1.2}
+G {}
+K {type=primitive
+format="@name @@I @VDD @VSS @VNW @VPW @@Z @prefix\\\\mcu7t5v0__dlyd_4"
+template="name=x1 VDD=VDD VSS=VSS VNW=VDD VPW=VSS prefix=gf180mcu_fd_sc_ "
+extra="VDD VSS VNW VPW prefix"
+verilogprefix=gf180mcu_fd_sc_
+highlight=true}
+V {}
+S {}
+E {}
+L 4 -100 -20 160 -20 {}
+L 4 -100 20 160 20 {}
+L 4 -100 -20 -100 20 {}
+L 4 160 -20 160 20 {}
+L 7 -120 0 -100 0 {}
+L 7 160 0 180 0 {}
+B 5 -122.5 -2.5 -117.5 2.5 {name=I dir=inout}
+B 5 177.5 -2.5 182.5 2.5 {name=Z dir=inout}
+T {@symname} -60 -6 0 0 0.3 0.3 {}
+T {@name} 165 -32 0 0 0.2 0.2 {}
+T {I} -75 -4 0 1 0.2 0.2 {}
+T {Z} 155 -4 0 1 0.2 0.2 {}

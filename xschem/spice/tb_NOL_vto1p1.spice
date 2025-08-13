@@ -1,0 +1,74 @@
+** sch_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/gf180_digital/NOL/tb_NOL_vto1p1.sch
+**.subckt tb_NOL_vto1p1
+VCC VDDd GND 3.3
+VSS VSSd GND 0
+VIN VIN VSSd PULSE(0 3.3 25n 1p 1p 100n 200n)
+C1 VCP VSSd 10f m=1
+C2 VCN VSSd 10f m=1
+x1 VDDd VSSd VCP VIN VCN NOL_vto1p1
+**** begin user architecture code
+
+
+.save all
+.control
+tran 100p 300n
+plot v(vin) v(vcp) v(vcn)
+plot v(vin) v(vcp)+4 v(vcn)+8
+plot v(x1.A1) v(x1.B1)+4 v(x1.B2)+8 v(x1.C1)+12 v(x1.C2)+16
+.endc
+
+.measure tran tdead_fall
++ TRIG tran1.V(vcn) TD=0u VAL=0.6 FALL=1
++ TARG tran1.V(vcp) TD=0u VAL=0.6 FALL=1
+
+
+.measure tran tdead_rise
++ TRIG tran1.V(vcp) TD=0u VAL=0.6 RISE=1
++ TARG tran1.V(vcn) TD=0u VAL=0.6 RISE=1
+
+
+
+
+
+.include /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu9t5v0/spice/gf180mcu_fd_sc_mcu9t5v0.spice
+.include /foss/pdks/gf180mcuD/libs.tech/ngspice/design.ngspice
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice typical
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  gf180_digital/NOL/NOL_vto1p1.sym # of pins=5
+** sym_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/gf180_digital/NOL/NOL_vto1p1.sym
+** sch_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/gf180_digital/NOL/NOL_vto1p1.sch
+.subckt NOL_vto1p1 VDDd VSSd VCP CLK VCN
+*.iopin CLK
+*.iopin VCP
+*.iopin VCN
+*.iopin VDDd
+*.iopin VSSd
+x11 B1 net1 VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__inv_1
+x12 net1 net3 VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__inv_2
+x13 net3 VCP VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__inv_4
+x14 A1 B1 C1 VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__nor2_1
+x15 VDDd VSSd C1 B2 large_delay_vto1p1
+x4 VDDd VSSd C2 B1 large_delay_vto1p1
+x1 B2 CLK C2 VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__nor2_1
+x3 CLK A1 VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__inv_1
+x5 B2 net2 VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__inv_2
+x6 net2 VCN VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__inv_4
+.ends
+
+
+* expanding   symbol:  gf180_digital/large_delay/large_delay_vto1p1.sym # of pins=4
+** sym_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/gf180_digital/large_delay/large_delay_vto1p1.sym
+** sch_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/gf180_digital/large_delay/large_delay_vto1p1.sch
+.subckt large_delay_vto1p1 VDDd VSSd VIN VOUT
+*.iopin VIN
+*.iopin VOUT
+*.iopin VDDd
+*.iopin VSSd
+x1 VIN VOUT VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__dlya_1
+.ends
+
+.GLOBAL GND
+.end

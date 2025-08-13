@@ -1,0 +1,34 @@
+# Cargar configuración del PDK
+source $env(PDK_ROOT)/$env(PDK)/libs.tech/xschem/xschemrc
+
+# Obtener ruta de este script
+set script_path [file dirname [file normalize [info script]]]
+
+# Carpeta raíz que contiene las bibliotecas personalizadas
+set base_path "$script_path/designs"
+
+# Función para recorrer recursivamente carpetas y agregarlas al path
+proc add_all_dirs {base_dir} {
+    # Agregar la carpeta actual
+    append ::XSCHEM_LIBRARY_PATH ":$base_dir"
+    
+    # Obtener subdirectorios
+    foreach sub [glob -nocomplain -type d -directory $base_dir *] {
+        # Llamada recursiva
+        add_all_dirs $sub
+    }
+}
+
+# Llamar a la función recursiva
+add_all_dirs $base_path
+
+# Agregar carpeta un nivel arriba si se desea
+append XSCHEM_LIBRARY_PATH :[file normalize "$script_path/../lib"]
+
+# Agregar librería del PDK
+append XSCHEM_LIBRARY_PATH :$env(PDK_ROOT)/$env(PDK)/libs.tech/xschem/
+set netlist_dir "$script_path/spice"
+
+
+# Esquemático inicial
+#set XSCHEM_START_WINDOW {./main.sch}
