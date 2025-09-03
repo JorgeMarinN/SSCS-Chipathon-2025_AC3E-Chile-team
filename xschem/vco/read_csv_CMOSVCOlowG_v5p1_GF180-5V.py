@@ -33,11 +33,17 @@ for i in sw:
 	frq[j]=lgt[0]/(x[kk3[-1]]-x[kk3[0]])
 	print(lgt[0]/(x[kk3[-1]]-x[kk3[0]]))
 	plt.plot(x,y)
+
+
 plt.show()
 
 #vcont = np.arange(0.1, 1.21, 0.06)
 #vcont = np.arange(0.1, 2.31, 0.12)
 vcont = np.arange(1.1, 3.31, 0.12)
+KI = (frq[-1] - frq[1])/(vcont[-1] - vcont[1])
+print("Vin = ",vcont[8])
+print("f(Vin = 2.06V) = ",frq[8])
+print("KI_approx = ",KI)
 #vcont = np.arange(0.1, 0.91, 0.06)
 plt.plot(vcont,frq)
 #plt.plot([0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,1],frq)

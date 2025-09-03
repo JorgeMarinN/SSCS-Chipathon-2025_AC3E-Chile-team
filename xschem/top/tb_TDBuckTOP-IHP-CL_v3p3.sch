@@ -38,7 +38,7 @@ lab=VCONTs}
 N 3080 -85 3080 -45 {
 lab=GND}
 N 3080 -400 3080 -360 {
-lab=ldo_out}
+lab=VOUT}
 N 2650 -1115 2715 -1115 {
 lab=DOUT}
 N 3080 -180 3080 -145 {
@@ -82,9 +82,9 @@ lab=VSS}
 N 2700 -235 2700 -225 {
 lab=VSS}
 N 2700 -305 2700 -295 {
-lab=ldo_out}
+lab=VOUT}
 N 2680 -305 2700 -305 {
-lab=ldo_out}
+lab=VOUT}
 N 2610 -305 2610 -285 {
 lab=#net2}
 N 2570 -305 2610 -305 {
@@ -96,7 +96,7 @@ lab=D1_N}
 N 2410 -455 2410 -425 {
 lab=VH}
 N 2700 -320 2700 -305 {
-lab=ldo_out}
+lab=VOUT}
 N 2500 -1215 2500 -1185 {
 lab=VDIG}
 N 2500 -1045 2500 -1015 {
@@ -149,7 +149,7 @@ C {devices/code_shown.sym} 3240 -1020 0 0 {name=s1 only_toplevel=false value=".p
 *.param RL = 60
 *15mA
 .param RL = 120
-.save v(ldo_out) v(D1) v(D1_N) v(DOUT) v(VCONTr) v(VCONTs) v(V_1r) v(V_1s) v(DOUT_buff) v(DOUT_buffn) v(vh) i(vh) v(vdd_gd) i(vdd_gd) i(v_res) v(VCONTs_OL) v(vcp) v(vcn) i(vldo_out) i(vvdig) i(vvdd)
+.save v(VOUT) v(D1) v(D1_N) v(DOUT) v(VCONTr) v(VCONTs) v(V_1r) v(V_1s) v(DOUT_buff) v(DOUT_buffn) v(vh) i(vh) v(vdd_gd) i(vdd_gd) i(v_res) v(VCONTs_OL) v(vcp) v(vcn) i(vldo_out) i(vvdig) i(vvdd)
 *.save all
 vvdd vdd 0 dc 5
 vvss vss 0 0
@@ -160,15 +160,15 @@ vvss vss 0 0
 .ic v(V_2s) = 4
 .ic v(V_1r) = 5
 .ic v(V_2r) = 0
-.ic v(ldo_out) = 2.5
+.ic v(VOUT) = 2.5
 
 .control
 *tran 2n 1m
 *tran 4n 250u
 tran 100p 100u
 *wrdata /foss/designs/TO202406_CMOSVCO_Esm22/xschem/data/dataVSENS_2xCMOSVCOnDFF_v1p1.txt v(V_1s) tran1.v(V_1s) tran2.v(V_1s) tran3.v(V_1s) tran4.v(V_1s) tran5.v(V_1s) tran6.v(V_1s) tran7.v(V_1s) tran8.v(V_1s) tran9.v(V_1s) tran10.v(V_1s) tran11.v(V_1s) tran12.v(V_1s) tran13.v(V_1s) tran14.v(V_1s) tran15.v(V_1s) tran16.v(V_1s) tran17.v(V_1s) tran18.v(V_1s) tran19.v(V_1s)
-*wrdata /foss/designs/TO202406_CMOSVCO_Esm22/xschem/data/data_TDBuckTOP-CL_v5p3_RL60.txt tran.v(vh) tran.i(vh) tran.v(ldo_out) tran.i(vldo_out) tran.v(vh_gd) tran.i(vh_gd) tran.i(vvdig) tran.i(vvdd)
-plot v(ldo_out)
+*wrdata /foss/designs/TO202406_CMOSVCO_Esm22/xschem/data/data_TDBuckTOP-CL_v5p3_RL60.txt tran.v(vh) tran.i(vh) tran.v(VOUT) tran.i(vldo_out) tran.v(vh_gd) tran.i(vh_gd) tran.i(vvdig) tran.i(vvdd)
+plot v(VOUT)
 plot v(v_res)
 plot v(D1) v(D1_N)+5
 plot v(DOUT) 
@@ -204,7 +204,7 @@ footprint=1206
 device=resistor
 m=1}
 C {devices/gnd.sym} 3080 -45 0 0 {name=l3 lab=GND}
-C {devices/lab_pin.sym} 3080 -400 2 0 {name=p27 sig_type=std_logic lab=ldo_out
+C {devices/lab_pin.sym} 3080 -400 2 0 {name=p27 sig_type=std_logic lab=VOUT
 
 }
 C {devices/lab_pin.sym} 3080 -270 2 0 {name=p28 sig_type=std_logic lab=VCONTs}
@@ -312,7 +312,7 @@ value="
 .param C = 150n
 
 "}
-C {devices/lab_pin.sym} 2700 -320 2 0 {name=p32 sig_type=std_logic lab=ldo_out
+C {devices/lab_pin.sym} 2700 -320 2 0 {name=p32 sig_type=std_logic lab=VOUT
 
 }
 C {devices/lab_pin.sym} 2330 -385 0 0 {name=l16 sig_type=std_logic lab=D1
