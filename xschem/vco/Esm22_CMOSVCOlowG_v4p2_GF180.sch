@@ -55,8 +55,8 @@ C {devices/iopin.sym} -325 -160 3 0 {name=p8 lab=VDD}
 C {devices/iopin.sym} -275 -210 1 0 {name=p9 lab=VSS}
 C {devices/opin.sym} -220 -170 0 0 {name=p10 lab=V_1}
 C {devices/opin.sym} -220 -140 0 0 {name=p11 lab=V_2}
-C {stage_v2p1_GF180.sym} -310 -10 0 0 {name=x1}
-C {stage_v2p1_GF180.sym} -120 -10 0 0 {name=x2}
-C {stage_v2p1_GF180.sym} 70 -10 0 0 {name=x3}
-C {stage_v2p1_GF180.sym} 260 -10 0 0 {name=x4}
-C {stage_v2p1_GF180.sym} 450 -10 0 0 {name=x5}
+C {vco/stage_v2p1_GF180.sym} -310 -10 0 0 {name=x1}
+C {vco/stage_v2p1_GF180.sym} -120 -10 0 0 {name=x2}
+C {vco/stage_v2p1_GF180.sym} 70 -10 0 0 {name=x3}
+C {vco/stage_v2p1_GF180.sym} 260 -10 0 0 {name=x4}
+C {vco/stage_v2p1_GF180.sym} 450 -10 0 0 {name=x5}

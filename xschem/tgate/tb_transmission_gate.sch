@@ -46,10 +46,9 @@ C {devices/iopin.sym} 780 -620 0 1 {name=p2 lab=vin1}
 C {devices/gnd.sym} 890 -550 0 0 {name=l3 lab=GND}
 C {devices/iopin.sym} 1000 -620 0 0 {name=p1 lab=vout}
 C {devices/iopin.sym} 890 -700 1 1 {name=p3 lab=vdd}
-C {transmission_gate.sym} 890 -620 0 0 {name=x1}
+C {tgate/transmission_gate.sym} 890 -620 0 0 {name=x1}
 C {lab_pin.sym} 830 -680 0 0 {name=p4 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 830 -560 0 0 {name=p5 sig_type=std_logic lab=GND}
-C {transmission_gate.sym} 890 -380 0 0 {name=x2}
 C {lab_pin.sym} 830 -440 0 0 {name=p9 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 830 -320 0 0 {name=p10 sig_type=std_logic lab=GND}
 C {lab_pin.sym} 890 -460 0 0 {name=p8 sig_type=std_logic lab=GND}
@@ -66,3 +65,4 @@ value="
 
 .include /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice
 "}
+C {tgate/transmission_gate.sym} 890 -380 0 0 {name=x2}

@@ -1,8 +1,8 @@
 ** sch_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/gf180_digital/NOL/tb_NOL_vto1p1.sch
 **.subckt tb_NOL_vto1p1
-VCC VDDd GND 3.3
+VCC VDDd GND 5
 VSS VSSd GND 0
-VIN VIN VSSd PULSE(0 3.3 25n 1p 1p 100n 200n)
+VIN VIN VSSd PULSE(0 5 25n 1p 1p 100n 200n)
 C1 VCP VSSd 10f m=1
 C2 VCN VSSd 10f m=1
 x1 VDDd VSSd VCP VIN VCN NOL_vto1p1
@@ -54,7 +54,7 @@ x15 VDDd VSSd C1 B2 large_delay_vto1p1
 x4 VDDd VSSd C2 B1 large_delay_vto1p1
 x1 B2 CLK C2 VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__nor2_1
 x3 CLK A1 VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__inv_1
-x5 B2 net2 VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__inv_2
+x5 B2 net2 VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__inv_1
 x6 net2 VCN VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__inv_4
 .ends
 
@@ -67,7 +67,7 @@ x6 net2 VCN VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__inv_4
 *.iopin VOUT
 *.iopin VDDd
 *.iopin VSSd
-x1 VIN VOUT VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__dlya_1
+x1 VIN VOUT VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__dlyd_1
 .ends
 
 .GLOBAL GND

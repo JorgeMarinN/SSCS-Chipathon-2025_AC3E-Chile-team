@@ -28,11 +28,11 @@ plot v(x1.A1) v(x1.B1)+4 v(x1.B2)+8 v(x1.C1)+12 v(x1.C2)+16
 
 
 "}
-C {devices/vsource.sym} -160 -110 0 0 {name=VCC value=3.3}
+C {devices/vsource.sym} -160 -110 0 0 {name=VCC value=5}
 C {devices/vsource.sym} -240 -110 0 0 {name=VSS value=0}
 C {devices/gnd.sym} -240 -80 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} -160 -80 0 0 {name=l2 lab=GND}
-C {devices/vsource.sym} -240 -210 0 0 {name=VIN value="PULSE(0 3.3 25n 1p 1p 100n 200n)"}
+C {devices/vsource.sym} -240 -210 0 0 {name=VIN value="PULSE(0 5 25n 1p 1p 100n 200n)"}
 C {devices/lab_pin.sym} -240 -240 0 0 {name=p1 sig_type=std_logic lab=VIN}
 C {devices/lab_pin.sym} -240 -180 0 0 {name=p2 sig_type=std_logic lab=VSSd}
 C {devices/lab_pin.sym} -240 -140 0 0 {name=p3 sig_type=std_logic lab=VSSd}

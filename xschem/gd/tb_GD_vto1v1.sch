@@ -1,5 +1,4 @@
-v {xschem version=3.4.5 file_version=1.2
-}
+v {xschem version=3.4.7 file_version=1.2}
 G {}
 K {}
 V {}
@@ -241,7 +240,7 @@ model=sg13_hv_nmos
 spiceprefix=X
 }
 C {gnd.sym} 170 -210 0 0 {name=l4 lab=GND}
-C {sg13g2_pr/sg13_hv_pmos.sym} -200 -400 0 0 {name=M1
+C {sg13_hv_pmos.sym} -200 -400 0 0 {name=M1
 l=\{l_M1\}
 w=\{w_M1\}
 ng=\{ng_M1\}
@@ -287,7 +286,7 @@ value="
 
 "}
 C {gnd.sym} -180 -520 0 0 {name=l6 lab=GND}
-C {GD_vto1p1.sym} 120 -560 0 0 {name=X2}
+C {gd/GD_vto1p1.sym} 120 -560 0 0 {name=X2}
 C {lab_pin.sym} 90 -600 0 0 {name=p10 sig_type=std_logic lab=Vs_M2}
 C {lab_pin.sym} 140 -670 0 0 {name=p13 sig_type=std_logic lab=Vdd}
 C {lab_pin.sym} 170 -670 0 1 {name=p17 sig_type=std_logic lab=VH
@@ -307,3 +306,4 @@ C {gnd.sym} -550 -190 0 0 {name=l9 lab=GND
 value=\{VH\}}
 C {ammeter.sym} -760 -300 2 0 {name=V_Igd_Vdd savecurrent=true spice_ignore=0}
 C {ammeter.sym} -650 -300 2 0 {name=V_Igd_VH savecurrent=true spice_ignore=0}
+C {gd/GD_vto2p1.sym} 480 -490 0 0 {name=x3}

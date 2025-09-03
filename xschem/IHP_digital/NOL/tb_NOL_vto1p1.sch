@@ -1,5 +1,4 @@
-v {xschem version=3.4.5 file_version=1.2
-}
+v {xschem version=3.4.7 file_version=1.2}
 G {}
 K {}
 V {}
@@ -56,7 +55,7 @@ device="ceramic capacitor"}
 C {devices/lab_pin.sym} 660 -60 0 0 {name=p10 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 300 -180 2 0 {name=p11 sig_type=std_logic lab=VCP}
 C {devices/lab_pin.sym} 300 -140 2 0 {name=p12 sig_type=std_logic lab=VCN}
-C {../NOL/NOL_vto1p1.sym} 180 -160 0 0 {name=x1}
+C {/foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/IHP_digital/NOL/NOL_vto1p1.sym} 180 -160 0 0 {name=x1}
 C {devices/code_shown.sym} 210 30 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -64,12 +63,12 @@ value="
 .param corner=0
 
 .if (corner==0)
-.option temp = -39
+*.option temp = -39
 .lib $::SG13G2_MODELS/cornerMOSlv.lib mos_ff
 .lib $::SG13G2_MODELS/cornerMOShv.lib mos_ff
 .lib $::SG13G2_MODELS/cornerRES.lib res_typ
 .lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
 .endif
 
-.include /opt/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
 "}

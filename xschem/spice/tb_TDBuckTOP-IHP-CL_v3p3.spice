@@ -259,7 +259,7 @@ XMP5 net4 VSS VDD VDD pfet_06v0 L=7u W=0.5u nf=1 ad='int((nf+1)/2) * W/nf * 0.18
 *.iopin VOUT
 *.iopin VDDd
 *.iopin VSSd
-x1 VIN VOUT VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__dlya_1
+x1 VIN VOUT VDDd VDDd VSSd VSSd gf180mcu_fd_sc_mcu9t5v0__dlyd_1
 .ends
 
 .GLOBAL GND

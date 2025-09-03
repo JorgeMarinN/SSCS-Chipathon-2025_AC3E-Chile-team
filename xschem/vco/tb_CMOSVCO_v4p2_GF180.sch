@@ -40,7 +40,7 @@ C {devices/lab_pin.sym} 2980 -840 3 0 {name=p5 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 2890 -930 1 0 {name=p6 sig_type=std_logic lab=VCONT}
 C {devices/lab_pin.sym} 3070 -950 1 0 {name=p7 sig_type=std_logic lab=V_1}
 C {devices/lab_pin.sym} 3070 -910 1 0 {name=p1 sig_type=std_logic lab=V_2}
-C {Esm22_CMOSVCOlowG_v4p2_GF180.sym} 2980 -930 0 0 {name=x1}
+C {vco/Esm22_CMOSVCOlowG_v4p2_GF180.sym} 2980 -930 0 0 {name=x1}
 C {devices/code_shown.sym} 3240 -1210 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="

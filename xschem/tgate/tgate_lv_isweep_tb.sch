@@ -123,6 +123,6 @@ value="
 
 .include /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice
 "}
-C {transmission_gate.sym} 610 -300 0 0 {name=x1}
 C {lab_pin.sym} 550 -360 0 0 {name=p4 sig_type=std_logic lab=Vdd}
 C {devices/gnd.sym} 820 -160 0 0 {name=l1 lab=GND}
+C {tgate/transmission_gate.sym} 610 -300 0 0 {name=x1}

@@ -93,5 +93,5 @@ C {gf180_digital/large_delay/large_delay_vto1p1.sym} 560 -520 0 0 {name=x15}
 C {gf180_digital/large_delay/large_delay_vto1p1.sym} 560 -380 0 0 {name=x4}
 C {gf180mcu_fd_sc_mcu9t5v0_symbols/nor2_1.sym} 360 -400 0 0 {name=x1 VGND=VSSd VNB=VDDd VPB=VSSd VPWR=VDDd prefix=gf180mcu_fd_sc_mcu9t5v0__ }
 C {gf180mcu_fd_sc_mcu9t5v0_symbols/inv_1.sym} 230 -520 0 0 {name=x3 VGND=VSSd VNB=VDDd VPB=VSSd VPWR=VDDd prefix=gf180mcu_fd_sc_mcu9t5v0__ }
-C {gf180mcu_fd_sc_mcu9t5v0_symbols/inv_2.sym} 870 -520 0 0 {name=x5 VGND=VSSd VNB=VDDd VPB=VSSd VPWR=VDDd prefix=gf180mcu_fd_sc_mcu9t5v0__ }
+C {gf180mcu_fd_sc_mcu9t5v0_symbols/inv_1.sym} 870 -520 0 0 {name=x5 VGND=VSSd VNB=VDDd VPB=VSSd VPWR=VDDd prefix=gf180mcu_fd_sc_mcu9t5v0__ }
 C {gf180mcu_fd_sc_mcu9t5v0_symbols/inv_4.sym} 980 -520 0 0 {name=x6 VGND=VSSd VNB=VDDd VPB=VSSd VPWR=VDDd prefix=gf180mcu_fd_sc_mcu9t5v0__ }
