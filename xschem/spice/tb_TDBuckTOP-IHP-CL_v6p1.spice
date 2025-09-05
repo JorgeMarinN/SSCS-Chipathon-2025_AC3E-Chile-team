@@ -1,5 +1,5 @@
-** sch_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/top/tb_TDBuckTOP-IHP-CL_v3p3.sch
-**.subckt tb_TDBuckTOP-IHP-CL_v3p3
+** sch_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/top/tb_TDBuckTOP-IHP-CL_v6p1.sch
+**.subckt tb_TDBuckTOP-IHP-CL_v6p1
 VH VH GND {VH}
 VVDIG VDIG GND {VDIG}
 RDIV1 VOUT VCONTs 50e6 m=1
@@ -18,8 +18,8 @@ XM3 Vc D1_N VSS VSS nfet_05v0 L={l_M2} W={w_M2} nf=1 ad='int((nf+1)/2) * W/nf * 
 XM4 Vc D1 VH VH pfet_05v0 L={l_M1} W={w_M1} nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m={mult_M1}
 x1 VDIG VSS V_1s_buff DOUT V_1r_buff PD_vto1p1
-x8 VCONTs VSS VDD V_1s V_2s Esm22_CMOSVCOlowG_v5p1_GF180-5V
-x2 VCONTr VSS VDD V_1r V_2r Esm22_CMOSVCOlowG_v5p1_GF180-5V
+x8 VCONTs VSS VDD V_1s V_2s Esm22_CMOSVCOlowG_v6p1_GF180-5V
+x2 VCONTr VSS VDD V_1r V_2r Esm22_CMOSVCOlowG_v6p1_GF180-5V
 C2 V_2r VSS 1f m=1
 C3 V_2s VSS 1f m=1
 X3 VDD_GD GND DOUT_buff D1 GD_schem
@@ -38,7 +38,7 @@ x13 net7 V_1r_buff VDIG VDIG VSS VSS gf180mcu_fd_sc_mcu9t5v0__inv_8
 .param VDIG = 5
 .param VH = 5
 .param VDD_GD = 5
-.param VCONTR = 2
+.param VCONTR = 2.64
 *LATEST TDBuckLOADS
 *300mA
 .param RL = 6
@@ -76,7 +76,7 @@ vvss vss 0 0
 .control
 *tran 2n 1m
 *tran 4n 250u
-tran 100p 100u
+tran 100p 30u
 *wrdata /foss/designs/TO202406_CMOSVCO_Esm22/xschem/data/dataVSENS_2xCMOSVCOnDFF_v1p1.txt v(V_1s) tran1.v(V_1s) tran2.v(V_1s) tran3.v(V_1s) tran4.v(V_1s) tran5.v(V_1s) tran6.v(V_1s) tran7.v(V_1s) tran8.v(V_1s) tran9.v(V_1s) tran10.v(V_1s) tran11.v(V_1s) tran12.v(V_1s) tran13.v(V_1s) tran14.v(V_1s) tran15.v(V_1s) tran16.v(V_1s) tran17.v(V_1s) tran18.v(V_1s) tran19.v(V_1s)
 *wrdata /foss/designs/TO202406_CMOSVCO_Esm22/xschem/data/data_TDBuckTOP-CL_v5p3_RL60.txt tran.v(vh) tran.i(vh) tran.v(VOUT) tran.i(vldo_out) tran.v(vh_gd) tran.i(vh_gd) tran.i(vvdig) tran.i(vvdd)
 plot v(VOUT)
@@ -133,8 +133,10 @@ plot v(VCONTr) v(VCONTs)
 *.param R = 16.7
 *.param C = 640n
 .param L = 220n
+*.param L = 440n
 *.param C = 1u
 .param C = 150n
+*.param C = 300n
 
 
 
@@ -164,20 +166,20 @@ x4 net2 V_PWM V_N VCC VCC VSS VSS gf180mcu_fd_sc_mcu9t5v0__nor2_1
 .ends
 
 
-* expanding   symbol:  vco/Esm22_CMOSVCOlowG_v5p1_GF180-5V.sym # of pins=5
-** sym_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/vco/Esm22_CMOSVCOlowG_v5p1_GF180-5V.sym
-** sch_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/vco/Esm22_CMOSVCOlowG_v5p1_GF180-5V.sch
-.subckt Esm22_CMOSVCOlowG_v5p1_GF180-5V VCONT VSS VDD V_1 V_2
+* expanding   symbol:  vco/Esm22_CMOSVCOlowG_v6p1_GF180-5V.sym # of pins=5
+** sym_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/vco/Esm22_CMOSVCOlowG_v6p1_GF180-5V.sym
+** sch_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/vco/Esm22_CMOSVCOlowG_v6p1_GF180-5V.sch
+.subckt Esm22_CMOSVCOlowG_v6p1_GF180-5V VCONT VSS VDD V_1 V_2
 *.ipin VCONT
 *.iopin VDD
 *.iopin VSS
 *.opin V_1
 *.opin V_2
-x1 VDD VCONT V_1 V_5 VSS stage_v3p1_GF180-5V
-x2 VDD VCONT V_2 V_1 VSS stage_v3p1_GF180-5V
-x3 VDD VCONT V_3 V_2 VSS stage_v3p1_GF180-5V
-x4 VDD VCONT V_4 V_3 VSS stage_v3p1_GF180-5V
-x5 VDD VCONT V_5 V_4 VSS stage_v3p1_GF180-5V
+x1 VDD VCONT V_1 V_5 VSS stage_v6p1_GF180-5V
+x2 VDD VCONT V_2 V_1 VSS stage_v6p1_GF180-5V
+x3 VDD VCONT V_3 V_2 VSS stage_v6p1_GF180-5V
+x4 VDD VCONT V_4 V_3 VSS stage_v6p1_GF180-5V
+x5 VDD VCONT V_5 V_4 VSS stage_v6p1_GF180-5V
 .ends
 
 
@@ -221,30 +223,30 @@ x10 VDDd VSSd V_gatein dly7 large_delay_vto1p1
 .ends
 
 
-* expanding   symbol:  vco/stage_v3p1_GF180-5V.sym # of pins=5
-** sym_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/vco/stage_v3p1_GF180-5V.sym
-** sch_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/vco/stage_v3p1_GF180-5V.sch
-.subckt stage_v3p1_GF180-5V VDD VCONT VOUT VIN VSS
+* expanding   symbol:  vco/stage_v6p1_GF180-5V.sym # of pins=5
+** sym_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/vco/stage_v6p1_GF180-5V.sym
+** sch_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/vco/stage_v6p1_GF180-5V.sch
+.subckt stage_v6p1_GF180-5V VDD VCONT VOUT VIN VSS
 *.ipin VIN
 *.opin VOUT
 *.iopin VDD
 *.iopin VSS
 *.ipin VCONT
-XMP3 net1 net3 VDD VDD pfet_06v0 L=4u W=5u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
+XMP3 net1 net3 VDD VDD pfet_06v0 L=4u W=5u nf=5 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
 XMP4 VOUT VIN net1 VDD pfet_06v0 L=5u W=5u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
-XMP2 net3 net3 VDD VDD pfet_06v0 L=4u W=8u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
+XMP2 net3 net3 VDD VDD pfet_06v0 L=4u W=8u nf=8 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
 XMP1 net4 VCONT VDD VDD pfet_06v0 L=7u W=0.5u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
-XMN2 net3 net4 VSS VSS nfet_06v0 L=0.70u W=7u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
+XMN2 net3 net4 VSS VSS nfet_06v0 L=0.70u W=7u nf=7 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
-XMN3 net2 net4 VSS VSS nfet_06v0 L=0.70u W=4.2u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
+XMN3 net2 net4 VSS VSS nfet_06v0 L=0.70u W=4u nf=4 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
 XMN4 VOUT VIN net2 VSS nfet_06v0 L=5u W=2u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
-XMN1 net4 net4 VSS VSS nfet_06v0 L=0.70u W=7u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
+XMN1 net4 net4 VSS VSS nfet_06v0 L=0.70u W=7u nf=7 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
 XMP5 net4 VSS VDD VDD pfet_06v0 L=7u W=0.5u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1

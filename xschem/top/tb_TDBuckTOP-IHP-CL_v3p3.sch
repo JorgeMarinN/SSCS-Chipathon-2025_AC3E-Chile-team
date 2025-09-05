@@ -130,7 +130,7 @@ C {devices/code_shown.sym} 3240 -1020 0 0 {name=s1 only_toplevel=false value=".p
 .param VCONTR = 2
 *LATEST TDBuckLOADS
 *300mA
-*.param RL = 6
+.param RL = 6
 *270mA
 *.param RL = 6.67
 *240mA
@@ -148,7 +148,7 @@ C {devices/code_shown.sym} 3240 -1020 0 0 {name=s1 only_toplevel=false value=".p
 *30mA
 *.param RL = 60
 *15mA
-.param RL = 120
+*.param RL = 120
 .save v(VOUT) v(D1) v(D1_N) v(DOUT) v(VCONTr) v(VCONTs) v(V_1r) v(V_1s) v(DOUT_buff) v(DOUT_buffn) v(vh) i(vh) v(vdd_gd) i(vdd_gd) i(v_res) v(VCONTs_OL) v(vcp) v(vcn) i(vldo_out) i(vvdig) i(vvdd)
 *.save all
 vvdd vdd 0 dc 5
