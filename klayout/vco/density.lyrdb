@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report-database>
+ <description>GF180 DENSITY DRC Run Report at</description>
+ <original-file>/foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/klayout/vco/vco_inv_forlvs.gds</original-file>
+ <generator>drc: script='/foss/pdks/gf180mcuD/libs.tech/klayout/macros/gf180mcu_drc.lydrc'</generator>
+ <top-cell>vco_inv_forlvs</top-cell>
+ <tags>
+ </tags>
+ <categories>
+  <category>
+   <name>M1.4</name>
+   <description>M1.4 : Metal1 coverage over the entire die shall be &gt;30%
+                (Refer to section 13.0 for Dummy Metal fill guidelines.
+                 Customer needs to ensure enough dummy metal to satisfy Metal1 coverage) : 30%</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>M2.4</name>
+   <description>M2.4 : Metal2 coverage over the entire die shall be &gt;30%
+                (Refer to section 13.0 for Dummy Metal fill guidelines.
+                 Customer needs to ensure enough dummy metal to satisfy Metal2 coverage) : 30%</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>M3.4</name>
+   <description>M3.4 : metal3 coverage over the entire die shall be &gt;30%
+                    (Refer to section 13.0 for Dummy Metal fill guidelines.
+                    Customer needs to ensure enough dummy metal to satisfy metal3 coverage) : 30%</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>M4.4</name>
+   <description>M4.4 : metal4 coverage over the entire die shall be &gt;30%
+                    (Refer to section 13.0 for Dummy Metal fill guidelines.
+                    Customer needs to ensure enough dummy metal to satisfy metal4 coverage) : 30%</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>M5.4</name>
+   <description>M5.4 : metal5 coverage over the entire die shall be &gt;30%
+                    (Refer to section 13.0 for Dummy Metal fill guidelines.
+                    Customer needs to ensure enough dummy metal to satisfy metal5 coverage) : 30%</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>MT.3</name>
+   <description>MT.3 : MetalTop coverage over the entire die shall be &gt;30%
+                                (Refer to section 10.3 for Dummy Metal-fill guidelines.
+                                Customer needs to ensure enough dummy metal to satisfy Metaln coverage) : 30%</description>
+   <categories>
+   </categories>
+  </category>
+ </categories>
+ <cells>
+  <cell>
+   <name>vco_inv_forlvs</name>
+   <variant/>
+   <layout-name/>
+   <references>
+   </references>
+  </cell>
+ </cells>
+ <items>
+  <item>
+   <tags/>
+   <category>'M1.4'</category>
+   <cell>vco_inv_forlvs</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (3.105,-4.105;3.105,0.355;4.215,0.355;4.215,-4.105)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'M1.4'</category>
+   <cell>vco_inv_forlvs</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (4.835,0.925;4.835,1.305;4.855,1.305;4.855,2.605;9.315,2.605;9.315,1.305;9.295,1.305;9.295,0.925)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'M1.4'</category>
+   <cell>vco_inv_forlvs</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (3.165,3.195;3.165,4.595;4.255,4.595;4.255,3.195)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'M1.4'</category>
+   <cell>vco_inv_forlvs</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (9.915,-4.105;9.915,4.595;10.295,4.595;10.295,-4.105)</value>
+   </values>
+  </item>
+ </items>
+</report-database>
