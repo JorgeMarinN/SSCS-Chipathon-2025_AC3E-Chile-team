@@ -1,0 +1,100 @@
+** sch_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/gf180mcu_io/bi_t_tran_tb.sch
+**.subckt bi_t_tran_tb
+V1 DVDD GND 5
+V2 VDD GND 5
+V3 DVSS GND 0
+V4 VSS GND 0
+V5 A0 GND PULSE(0 5 10n 100p 100p 10n 20n)
+V7 IE_0 GND 5
+V8 OE_0 GND 5
+V9 PU GND 0
+V10 PD GND 0
+V11 SL GND 0
+V13 CS GND 5
+V6 PDRV0 GND 0
+V12 PDRV1 GND 0
+V15 IE_1 GND 0
+V16 OE_1 GND 5
+V18 IE_2 GND 5
+V19 OE_2 GND 0
+x2 A1 ctrl_n ctrl bus1 VDD VSS transmission_gate
+V22 ctrl GND 5
+V23 ctrl_n GND 0
+x4 A4 ctrl ctrl_n bus4 VDD VSS transmission_gate
+x5 bus2 ctrl_n ctrl Y2 VDD VSS transmission_gate
+x6 bus5 ctrl ctrl_n Y5 VDD VSS transmission_gate
+V21 A3 GND PULSE(0 5 10n 100p 100p 10n 20n)
+V24 IE_3 GND 5
+V25 OE_3 GND 5
+V27 IE_4 GND 0
+V28 OE_4 GND 5
+V30 IE_5 GND 5
+V31 OE_5 GND 0
+V32 PAD2 GND PULSE(0 5 10n 100p 100p 10n 20n)
+V33 PAD5 GND PULSE(0 5 10n 100p 100p 10n 20n)
+V17 bus4 GND PULSE(0 5 10n 100p 100p 10n 20n)
+V29 bus1 GND PULSE(0 5 10n 100p 100p 10n 20n)
+C1 bus2 GND 10f m=1
+C2 bus5 GND 10f m=1
+C3 PAD2 GND 10f m=1
+C4 PAD5 GND 10f m=1
+**** begin user architecture code
+
+
+.param mn_w=36.0u
+.param mp_w=90.0u
+
+.tran 100p 100n
+.save all
+.control
+run
+display
+plot bus1 PAD1
+plot bus2 PAD2
+plot bus4 PAD4
+plot bus5 PAD5
+.endc
+
+
+
+.include /foss/pdks/gf180mcuD/libs.tech/ngspice/design.ngspice
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice typical
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice diode_typical
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice res_typical
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice moscap_typical
+
+
+*.include /foss/designs/Chipathon2025_pads/xschem/gf180mcu_fd_io.spice
+*Include below works only because the file is in the spice folder
+.include gf180mcu_fd_io.spice
+XDUT0 A0 CS DVDD DVSS IE_0 OE_0 PAD0 PD PDRV0 PDRV1 PU SL VDD VSS Y0 gf180mcu_fd_io__bi_t
+XDUT1 A1 CS DVDD DVSS IE_1 OE_1 PAD1 PD PDRV0 PDRV1 PU SL VDD VSS Y1 gf180mcu_fd_io__bi_t
+XDUT2 A2 CS DVDD DVSS IE_2 OE_2 PAD2 PD PDRV0 PDRV1 PU SL VDD VSS Y2 gf180mcu_fd_io__bi_t
+
+XDUT3 A3 CS DVDD DVSS IE_3 OE_3 PAD3 PD PDRV0 PDRV1 PU SL VDD VSS Y3 gf180mcu_fd_io__bi_t
+XDUT4 A4 CS DVDD DVSS IE_4 OE_4 PAD4 PD PDRV0 PDRV1 PU SL VDD VSS Y4 gf180mcu_fd_io__bi_t
+XDUT5 A5 CS DVDD DVSS IE_5 OE_5 PAD5 PD PDRV0 PDRV1 PU SL VDD VSS Y5 gf180mcu_fd_io__bi_t
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  tgate/transmission_gate.sym # of pins=6
+** sym_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/tgate/transmission_gate.sym
+** sch_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/tgate/transmission_gate.sch
+.subckt transmission_gate B GN GP A BP BN
+*.iopin B
+*.iopin GN
+*.iopin A
+*.iopin GP
+*.iopin BN
+*.iopin BP
+XM1 A GN B BN nfet_03v3 L=0.28u W=mn_w nf=6 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+XM2 A GP B BP pfet_03v3 L=0.28u W=mp_w nf=6 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+.ends
+
+.GLOBAL GND
+.end
