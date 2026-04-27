@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <report-database>
  <description>GF180 ANTENNA DRC Run Report at</description>
- <original-file>/foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/klayout/vco/vco_inv_forlvs.gds</original-file>
+ <original-file>/foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/klayout/vco/vco_pmosmirr_forlvs.gds</original-file>
  <generator>drc: script='/foss/pdks/gf180mcuD/libs.tech/klayout/macros/gf180mcu_drc.lydrc'</generator>
- <top-cell>vco_inv_forlvs</top-cell>
+ <top-cell>vco_pmosmirr_forlvs</top-cell>
  <tags>
  </tags>
  <categories>
@@ -139,7 +139,7 @@
  </categories>
  <cells>
   <cell>
-   <name>vco_inv_forlvs</name>
+   <name>vco_pmosmirr_forlvs</name>
    <variant/>
    <layout-name/>
    <references>

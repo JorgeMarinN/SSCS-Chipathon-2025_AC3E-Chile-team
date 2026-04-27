@@ -1,0 +1,6 @@
+* Extracted by KLayout with GF180MCU LVS runset on : 09/09/2025 04:59
+
+.SUBCKT vco_vcont_forlvs
+M$1 \$4 \$3 \$1 \$1 pfet_05v0 L=7U W=0.5U AS=0.385P AD=0.13P PS=2.54U PD=1.02U
+M$2 \$1 \$5 \$4 \$1 pfet_05v0 L=7U W=0.5U AS=0.13P AD=0.385P PS=1.02U PD=2.54U
+.ENDS vco_vcont_forlvs

@@ -1,0 +1,7 @@
+* Extracted by KLayout with GF180MCU LVS runset on : 09/09/2025 21:18
+
+.SUBCKT vco_nmosmirr_forlvs VSS
+M$1 VSS \$3 \$3 VSS nfet_05v0 L=0.7U W=7U AS=2.29P AD=1.82P PS=12.58U PD=10.64U
+M$8 \$4 \$3 VSS VSS nfet_05v0 L=0.7U W=4U AS=1.04P AD=1.04P PS=6.08U PD=6.08U
+M$12 \$5 \$3 VSS VSS nfet_05v0 L=0.7U W=7U AS=1.82P AD=2.29P PS=10.64U PD=12.58U
+.ENDS vco_nmosmirr_forlvs

@@ -1,0 +1,6 @@
+** sch_path: /foss/designs/SSCS-Chipathon-2025_AC3E-Chile-team/xschem/vco/vco_pmosmirr_forlvs.sch
+.subckt vco_pmosmirr_forlvs VDD VSS1 VSS2
+*.PININFO VDD:B VSS1:B VSS2:B
+MP2 VSS1 VSS1 VDD VDD pfet_05v0 L=4u W=8u nf=8 m=1
+MP3 VSS2 VSS1 VDD VDD pfet_05v0 L=4u W=5u nf=5 m=1
+.ends
